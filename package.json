@@ -1,0 +1,23 @@
+{
+  "name": "ai-tech-fast-growth",
+  "version": "1.0.0",
+  "description": "面向AI科技领域的微信视频号极简短视频起号与日更流水线（开源产品级）",
+  "main": "scripts/produce.mjs",
+  "type": "module",
+  "scripts": {
+    "doctor": "bash scripts/doctor.sh",
+    "produce": "node scripts/produce.mjs",
+    "fetch": "node scripts/fetch-content.mjs"
+  },
+  "keywords": [
+    "ai",
+    "channels",
+    "video-generator",
+    "short-video",
+    "opencli",
+    "automation",
+    "social-media"
+  ],
+  "author": "Open Source Community",
+  "license": "MIT"
+}
