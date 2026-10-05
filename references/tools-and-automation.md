@@ -24,27 +24,29 @@
 
 ---
 
-## 二、 核心强制依赖：opencli (必须安装)
+## 二、 数据采集双模式：轻量免依赖直连模式 与 opencli 全幅长图模式
 
-### 1. 为什么 opencli 是绝对强制依赖？
-* **痛点**：推特、技术社区、前沿博客的页面结构复杂，如果靠人工复制粘贴或让大模型手写爬虫，容易遭遇反爬、截断或格式破败。
-* **价值**：`opencli` 是标准化的无感浏览器命令行底座，能够稳定、无头地打开任意目标页面、等待动态渲染、截取高达几千像素的高清全幅长图，是全自动化流水线的命脉。
+### 1. 模式 A：【零依赖轻量模式】AI HOT 原生网络直连 (推荐，无需 opencli！)
+* **核心价值**：**完全不依赖 opencli 或任何无头浏览器！** 使用纯 Node.js 原生标准网络请求，零配置直连 AI HOT 官方 Agent 匿名免密接口（`https://aihot.news/api/v1/agent`）；
+* **使用场景**：快速获取当日热点资讯、按关键词搜索一手新闻、提取精炼中文摘要与推荐理由；
+* **开箱即用脚本**：
+  ```bash
+  # 抓取今日过去 24 小时精选前 5 条一手资讯
+  node scripts/fetch-aihot.mjs --latest 5
 
-### 2. 检查与一键安装命令
-```bash
-# 1. 检查是否安装
-which opencli
+  # 按关键词搜索最近 7 天一手热点资讯 (如 DeepSeek)
+  node scripts/fetch-aihot.mjs --search "DeepSeek" --out-dir "tmp/aihot-deepseek"
 
-# 2. 若未安装，一键全局安装
-npm install -g opencli
-```
+  # 抓取当前全网实时热点榜
+  node scripts/fetch-aihot.mjs --hot
+  ```
 
-### 3. 开箱即用标准工具（严禁 AI 重新造轮子）
-流水线已内置标准抓取脚本 `scripts/fetch-content.mjs`，AI 仅需执行单行命令：
-```bash
-# 一键抓取任意公开推文或文章，生成全幅长图与元数据
-node scripts/fetch-content.mjs --url "https://x.com/username/status/123456" --out-dir "tmp/article_01"
-```
+### 2. 模式 B：【高清长图模式】opencli 像素级全幅截图 (用于推文长图)
+* **核心价值**：当素材是一整条推特长推文或技术论文长图，需要将其制作成长图等宽垂直滚动扫视短视频时，通过 `opencli` 截取完整高清全屏截图；
+* **使用脚本**：
+  ```bash
+  node scripts/fetch-content.mjs --url "https://x.com/username/status/123456" --out-dir "tmp/article_01"
+  ```
 
 ---
 

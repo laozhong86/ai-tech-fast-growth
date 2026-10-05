@@ -7,7 +7,8 @@
   "scripts": {
     "doctor": "bash scripts/doctor.sh",
     "produce": "node scripts/produce.mjs",
-    "fetch": "node scripts/fetch-content.mjs"
+    "fetch": "node scripts/fetch-content.mjs",
+    "aihot": "node scripts/fetch-aihot.mjs"
   },
   "keywords": [
     "ai",
