@@ -30,9 +30,8 @@ function printHelp() {
   node scripts/produce.mjs --url <URL> [选项]
 
 参数说明:
-  --url, -u       [必填] 公开资讯链接 (如推特推文、技术热点博客)
+  --url, -u       [必填] 公开一手资讯链接 (如推特推文、技术热点博客)
   --title, -t     [可选] 自定义双行主标题 (若省略则由大模型根据正文自动提炼)
-  --action, -a    [可选] 发布动作: draft (默认保存至草稿箱) 或 preview (仅本地预览成片)
   --out, -o       [可选] 输出工作目录 (默认: tmp/pipeline-output)
   --help, -h      显示帮助信息
   `);
@@ -41,7 +40,6 @@ function printHelp() {
 const args = process.argv.slice(2);
 let targetUrl = '';
 let customTitle = '';
-let action = 'draft';
 let outputDir = 'tmp/pipeline-output';
 
 for (let i = 0; i < args.length; i++) {
@@ -50,8 +48,6 @@ for (let i = 0; i < args.length; i++) {
     targetUrl = args[++i];
   } else if (arg === '--title' || arg === '-t') {
     customTitle = args[++i];
-  } else if (arg === '--action' || arg === '-a') {
-    action = args[++i];
   } else if (arg === '--out' || arg === '-o') {
     outputDir = args[++i];
   } else if (arg === '--help' || arg === '-h') {
@@ -174,11 +170,10 @@ try {
 }
 
 console.log("\n==========================================================");
-console.log("🎯 【流水线生产大功告成】");
+console.log("🎯 【短视频内容制作大功告成】");
 console.log(`📹 本地高清成片: ${finalVideoPath}`);
 console.log(`🖼️ 首帧质检封面: ${firstFramePath}`);
 console.log(`💬 置顶互动钩子: ${articleData.commentHook}`);
-if (action === 'draft') {
-  console.log("📦 草稿箱就绪状态: 视频成片已准备妥当，可直接调用上传工具同步微信视频号助手草稿箱！");
-}
+console.log(`🏷️ 推荐搜索标签: ${articleData.tags}`);
+console.log("✨ 交付状态: 高清视频与文案包已准备完毕，请创作者自行分发至目标平台！");
 console.log("==========================================================");
