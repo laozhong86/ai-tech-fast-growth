@@ -84,21 +84,17 @@ if (openSuccess) {
     execSync(`opencli browser ${session} wait time ${Math.max(1, Math.round(waitMs / 1000))}`, { stdio: 'pipe' });
   } catch {}
 
-  console.log(`>>> [2.5/3] 执行正文内容聚焦与干扰侧边栏剔除净化...`);
+  console.log(`>>> [2.5/3] 执行正文内容聚焦与干扰侧边栏剔除净化 (936px 视窗等宽铺满)...`);
   try {
     const isolateJs = `(() => {
   const art = document.querySelector("article") || document.querySelector("main") || document.querySelector(".article-content") || document.querySelector(".post-content");
   if (art) {
     document.body.innerHTML = "";
-    document.body.style.background = "#0d1117";
-    document.body.style.display = "flex";
-    document.body.style.justifyContent = "center";
-    document.body.style.padding = "30px 20px";
+    document.documentElement.style.cssText = "margin:0!important;padding:0!important;width:936px!important;background:#0d1117!important;overflow-x:hidden!important;";
+    document.body.style.cssText = "margin:0!important;padding:0!important;width:936px!important;background:#0d1117!important;display:block!important;";
+    
+    art.style.cssText = "margin:0 auto!important;width:936px!important;max-width:936px!important;padding:24px 32px!important;box-sizing:border-box!important;background:transparent!important;";
     art.querySelectorAll("aside, nav, [class*='recommend'], [class*='Recommend'], [class*='sidebar'], [class*='Sidebar'], [class*='drawer'], [class*='Drawer']").forEach(el => el.remove());
-    art.style.maxWidth = "760px";
-    art.style.width = "100%";
-    art.style.margin = "0 auto";
-    art.style.background = "transparent";
     document.body.appendChild(art);
     return { isolated: true };
   }
@@ -110,12 +106,12 @@ if (openSuccess) {
     console.warn("⚠️ 页面预处理略过:", err.message);
   }
 
-  console.log(`>>> [3/3] 正在截取全幅高清正文长图并保存至: ${screenshotPath}`);
+  console.log(`>>> [3/3] 正在截取全幅高清正文长图 (等宽 936px 铺满视窗) 并保存至: ${screenshotPath}`);
   try {
-    execSync(`opencli browser ${session} screenshot --full-page "${screenshotPath}"`, { stdio: 'pipe' });
+    execFileSync("opencli", ["browser", session, "screenshot", "--width", "936", "--full-page", screenshotPath], { stdio: 'pipe' });
   } catch (err) {
     try {
-      execSync(`opencli browser ${session} screenshot "${screenshotPath}"`, { stdio: 'pipe' });
+      execSync(`opencli browser ${session} screenshot --full-page "${screenshotPath}"`, { stdio: 'pipe' });
     } catch (e2) {
       console.warn("⚠️ 截图操作未完成，尝试触发本地兜底保障机制...");
     }
