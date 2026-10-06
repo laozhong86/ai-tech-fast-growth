@@ -165,16 +165,30 @@ def render_overlay(article: dict, out_path: str):
             has_bubble = True
             hook_text = hook_text[1:].strip()
 
+        has_down_finger = False
+        if hook_text.endswith("👇"):
+            has_down_finger = True
+            hook_text = hook_text[:-1].strip()
+
         hook_fnt = get_font(30, False)
         text_len = d.textlength(hook_text, font=hook_fnt)
+        emo_fnt_sm = get_emoji_font(32)
+
+        prefix_w = 42 if has_bubble else 0
+        suffix_w = 42 if has_down_finger else 0
+        total_w = prefix_w + text_len + suffix_w
+        start_x = (W - total_w) / 2
+
+        cur_x = start_x
         if has_bubble:
-            emo_fnt_sm = get_emoji_font(32)
-            total_w = 38 + text_len
-            start_x = (W - total_w) / 2
-            d.text((start_x, 1530), "💬", font=emo_fnt_sm, embedded_color=True, anchor="lm")
-            d.text((start_x + 40, 1530), hook_text, font=hook_fnt, fill=(230, 226, 220), anchor="lm")
-        else:
-            d.text((W / 2, 1530), hook_text, font=hook_fnt, fill=(230, 226, 220), anchor="mm")
+            d.text((cur_x, 1530), "💬", font=emo_fnt_sm, embedded_color=True, anchor="lm")
+            cur_x += prefix_w
+
+        d.text((cur_x, 1530), hook_text, font=hook_fnt, fill=(230, 226, 220), anchor="lm")
+        cur_x += text_len
+
+        if has_down_finger:
+            d.text((cur_x + 4, 1530), "👇", font=emo_fnt_sm, embedded_color=True, anchor="lm")
 
     overlay.save(out_path, "PNG")
     print(f"✅ 专业视觉排版卡已生成: {out_path}")
