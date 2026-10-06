@@ -1,7 +1,7 @@
 {
   "name": "ai-tech-fast-growth",
   "version": "1.0.0",
-  "description": "面向AI科技领域的微信视频号极简短视频起号与日更流水线（开源产品级）",
+  "description": "一句话把 AI 新闻、GitHub 项目、推文链接变成 10 秒竖屏短视频 · 本地合成、零密钥、跨智能助手通用",
   "main": "scripts/produce.mjs",
   "type": "module",
   "scripts": {
@@ -11,14 +11,29 @@
     "aihot": "node scripts/fetch-aihot.mjs"
   },
   "keywords": [
+    "agent-skills",
     "ai",
-    "channels",
-    "video-generator",
-    "short-video",
-    "opencli",
     "automation",
-    "social-media"
+    "channels",
+    "claude-code",
+    "douyin",
+    "ffmpeg",
+    "opencli",
+    "short-video",
+    "skills",
+    "social-media",
+    "tiktok",
+    "video-generator",
+    "wechat-channels"
   ],
-  "author": "Open Source Community",
-  "license": "MIT"
+  "author": "laozhong86",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laozhong86/ai-tech-fast-growth.git"
+  },
+  "homepage": "https://github.com/laozhong86/ai-tech-fast-growth#readme",
+  "bugs": {
+    "url": "https://github.com/laozhong86/ai-tech-fast-growth/issues"
+  }
 }
