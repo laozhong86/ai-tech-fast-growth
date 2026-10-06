@@ -84,12 +84,52 @@ if (openSuccess) {
     execSync(`opencli browser ${session} wait time ${Math.max(1, Math.round(waitMs / 1000))}`, { stdio: 'pipe' });
   } catch {}
 
-  console.log(`>>> [3/3] 正在截取全幅高清推文/长图并保存至: ${screenshotPath}`);
+  console.log(`>>> [2.5/3] 执行正文内容聚焦与干扰侧边栏剔除净化...`);
   try {
-    execSync(`opencli browser ${session} screenshot "${screenshotPath}"`, { stdio: 'pipe' });
-  } catch (err) {
-    console.warn("⚠️ 截图操作未完成，尝试触发本地兜底保障机制...");
+    const isolateJs = `
+(() => {
+  // 1. 优先提取 article 或 main 核心正文容器
+  const art = document.querySelector("article") || document.querySelector("main") || document.querySelector(".article-content") || document.querySelector(".post-content");
+  if (art) {
+    document.body.innerHTML = "";
+    document.body.style.background = "#0d1117";
+    document.body.style.display = "flex";
+    document.body.style.justifyContent = "center";
+    document.body.style.padding = "30px 20px";
+    
+    // 清除正文内部嵌套的侧边栏、浮动栏或推荐干扰块
+    art.querySelectorAll("aside, nav, [class*='recommend'], [class*='Recommend'], [class*='sidebar'], [class*='Sidebar'], [class*='drawer'], [class*='Drawer']").forEach(el => el.remove());
+    
+    art.style.maxWidth = "760px";
+    art.style.width = "100%";
+    art.style.margin = "0 auto";
+    art.style.background = "transparent";
+    document.body.appendChild(art);
+    return { isolated: true };
   }
+
+  // 2. 兜底通用净化：隐藏常见的侧边栏与导航栏
+  document.querySelectorAll("aside, nav, header, footer, [class*='sidebar'], [class*='Sidebar'], [class*='Drawer'], [class*='drawer']").forEach(el => el.style.setProperty("display", "none", "important"));
+  return { isolated: false };
+})()
+`;
+    execSync(`opencli browser ${session} eval ${JSON.stringify(isolateJs)}`, { stdio: 'pipe' });
+  } catch (err) {}
+
+  console.log(`>>> [3/3] 正在截取全幅高清正文长图并保存至: ${screenshotPath}`);
+  try {
+    execSync(`opencli browser ${session} screenshot --full-page "${screenshotPath}"`, { stdio: 'pipe' });
+  } catch (err) {
+    try {
+      execSync(`opencli browser ${session} screenshot "${screenshotPath}"`, { stdio: 'pipe' });
+    } catch (e2) {
+      console.warn("⚠️ 截图操作未完成，尝试触发本地兜底保障机制...");
+    }
+  }
+
+  try {
+    execSync(`opencli browser ${session} close`, { stdio: 'pipe' });
+  } catch {}
 }
 
 // 本地自愈兜底：若网络阻断导致截图未落盘，自动调取内置高清长图模板保障流水线端到端可执行

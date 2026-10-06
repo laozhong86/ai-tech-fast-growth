@@ -302,25 +302,25 @@ try {
                      [bg][fg]overlay=72:560:shortest=1[comp]; \
                      [comp][2:v]overlay=0:0:shortest=1[vout]; \
                      [3:a]afade=t=in:st=0:d=0.2,afade=t=out:st=11.2:d=0.8[aout]`;
-    const renderCmd = `ffmpeg -y \
+    const renderCmd = `ffmpeg -y -nostdin \
       -stream_loop -1 -i "${chosenBgPath}" \
       -loop 1 -i "${sourceImage}" \
       -loop 1 -i "${overlayCardPath}" \
       -i "${chosenBgmPath}" \
       -filter_complex "${filterComplex}" \
-      -map "[vout]" -map "[aout]" -t 12.0 -c:v libx264 -pix_fmt yuv420p -c:a aac -b:a 192k "${finalVideoPath}"`;
+      -map "[vout]" -map "[aout]" -t 12.0 -c:v libx264 -preset veryfast -pix_fmt yuv420p -c:a aac -b:a 192k "${finalVideoPath}"`;
     execSync(renderCmd, { stdio: 'ignore' });
   } else {
     filterComplex = `[1:v]${mediaFilter}[fg]; \
                      [0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920[bg]; \
                      [bg][fg]overlay=72:560:shortest=1[vout]; \
                      [2:a]afade=t=in:st=0:d=0.2,afade=t=out:st=11.2:d=0.8[aout]`;
-    const renderCmd = `ffmpeg -y \
+    const renderCmd = `ffmpeg -y -nostdin \
       -stream_loop -1 -i "${chosenBgPath}" \
       -loop 1 -i "${sourceImage}" \
       -i "${chosenBgmPath}" \
       -filter_complex "${filterComplex}" \
-      -map "[vout]" -map "[aout]" -t 12.0 -c:v libx264 -pix_fmt yuv420p -c:a aac -b:a 192k "${finalVideoPath}"`;
+      -map "[vout]" -map "[aout]" -t 12.0 -c:v libx264 -preset veryfast -pix_fmt yuv420p -c:a aac -b:a 192k "${finalVideoPath}"`;
     execSync(renderCmd, { stdio: 'ignore' });
   }
   
