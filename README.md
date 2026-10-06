@@ -1,5 +1,8 @@
 # 🚀 AI Tech Fast Growth (AI 科技视频号极简起号流水线)
 
+[![skills.sh](https://skills.sh/b/laozhong86/ai-tech-fast-growth)](https://skills.sh/laozhong86/ai-tech-fast-growth)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 > **面向零基础创作者、个人超级个体与社媒团队的开源产品级起号神器**。  
 > 彻底解耦付费会员限制，5 分钟极速出片，依靠 5~13 秒超高完播率撬动视频号公域推流池。
 
@@ -38,6 +41,20 @@
 ---
 
 ## ⚡ 极速上手 (Quick Start)
+
+### 0. 一键安装到 AI 助手（推荐）
+
+本项目已入驻 [skills.sh](https://skills.sh/laozhong86/ai-tech-fast-growth) 开放技能生态，支持 **79+ 款 AI 编程助手**（Claude Code、Codex、Cursor、Copilot、DeepSeek Harness 等）一条命令直接安装：
+
+```bash
+# 项目级安装（当前目录可用）
+npx skills add laozhong86/ai-tech-fast-growth
+
+# 全局安装（所有项目可用，写入 ~/.agents/skills）
+npx skills add laozhong86/ai-tech-fast-growth -g
+```
+
+安装完成后，对你的 AI 助手说一句「**帮我做一条 AI 科技快讯视频**」即可自动唤起本技能的全部流水线。
 
 ### 1. 克隆与环境自检 (一键自愈)
 打开终端，进入项目目录执行环境检查：
