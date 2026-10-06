@@ -11,6 +11,7 @@ output/
 videos/
 *.mp4
 !assets/templates/*.mp4
+!assets/demos/*.mp4
 
 # 依赖与日志
 node_modules/
