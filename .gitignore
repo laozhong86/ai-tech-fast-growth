@@ -1,3 +1,10 @@
+# 本地临时工作台与甄选工具 (仅本地可见，防公开泄露)
+.local_workbench/
+.local_temp/
+*.tmp
+selected-gallery.json
+gallery-picker.html
+
 # 临时输出与渲染产物
 tmp/
 output/
