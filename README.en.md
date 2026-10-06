@@ -47,7 +47,13 @@ Universal across coding agents & copilots — Claude Code, Cursor, Codex, OpenCl
 
 | Case 1 · Creator Leaderboard | Case 2 · Plugin Ecosystem Build | Case 3 · Robot Dexterous Hand |
 | :---: | :---: | :---: |
-| <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/01-x-creators-list.mp4" poster="assets/demos/01-x-creators-list.png" controls width="280"></video> | <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/02-claude-code-mods.mp4" poster="assets/demos/02-claude-code-mods.png" controls width="280"></video> | <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/03-atlas-robot-hands.mp4" poster="assets/demos/03-atlas-robot-hands.png" controls width="280"></video> |
+| [▶ 点击播放](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/01-x-creators-list.mp4)
+
+[![01-x-creators-list](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/01-x-creators-list.gif)](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/01-x-creators-list.mp4) | [▶ 点击播放](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/02-claude-code-mods.mp4)
+
+[![02-claude-code-mods](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/02-claude-code-mods.gif)](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/02-claude-code-mods.mp4) | [▶ 点击播放](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/03-atlas-robot-hands.mp4)
+
+[![03-atlas-robot-hands](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/03-atlas-robot-hands.gif)](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/03-atlas-robot-hands.mp4) |
 | **X Top Tech Creators Roster** | **Claude Code Plugin Ecosystem** | **Boston Dynamics Atlas Hands** |
 | Smooth vertical scan · Viral hook | Dual-line pain-point title · Warm gold | Hardware in-action · Strong visual impact |
 
@@ -57,7 +63,13 @@ Universal across coding agents & copilots — Claude Code, Cursor, Codex, OpenCl
 
 | Case 4 · Karpathy Future Forecast | Case 5 · Automated Fast Pipeline | Case 6 · Skill Extension Practical |
 | :---: | :---: | :---: |
-| <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/04-karpathy-ai-outputs.mp4" poster="assets/demos/04-karpathy-ai-outputs.png" controls width="280"></video> | <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/05-codex-fast-news.mp4" poster="assets/demos/05-codex-fast-news.png" controls width="280"></video> | <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/06-claude-skill-guide.mp4" poster="assets/demos/06-claude-skill-guide.png" controls width="280"></video> |
+| [▶ 点击播放](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/04-karpathy-ai-outputs.mp4)
+
+[![04-karpathy-ai-outputs](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/04-karpathy-ai-outputs.gif)](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/04-karpathy-ai-outputs.mp4) | [▶ 点击播放](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/05-codex-fast-news.mp4)
+
+[![05-codex-fast-news](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/05-codex-fast-news.gif)](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/05-codex-fast-news.mp4) | [▶ 点击播放](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/06-claude-skill-guide.mp4)
+
+[![06-claude-skill-guide](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/06-claude-skill-guide.gif)](https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/06-claude-skill-guide.mp4) |
 | **Karpathy on AI Autonomous Outputs** | **Codex Automated Fast News** | **Claude Skill Extension Guide** |
 | Industry authority · Deep cognitive value | End-to-end 1-click render · Industrial grade | Native Emoji layout · 12s retention loop |
 
