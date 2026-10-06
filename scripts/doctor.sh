@@ -27,6 +27,16 @@ fi
 echo -n "2. 检查 Python 3 渲染环境 ... "
 if command -v python3 >/dev/null 2>&1; then
     echo "✅ 已就绪 (Python $(python3 -V 2>&1 | awk '{print $2}'))"
+    # 检查 PIL / Pillow
+    if python3 -c "from PIL import Image" >/dev/null 2>&1; then
+        echo "   - PIL 图像与排版渲染引擎 ... ✅ 已就绪"
+    else
+        echo "   - ⚠️ 未检测到 Pillow (视觉排版依赖)"
+        if [ "$AUTO_INSTALL" = true ]; then
+            echo "     >>> 正在尝试自动安装 Pillow..."
+            pip3 install pillow || python3 -m pip install pillow || true
+        fi
+    fi
 else
     echo "❌ 未检测到 Python 3！"
     echo "   [提示] 请前往 https://python.org 安装 Python 3。"
@@ -98,10 +108,9 @@ fi
 
 echo "=========================================================="
 if [ $MISSING_REQUIRED -ne 0 ]; then
-    echo "❌ 检查未通过：存在关键基础依赖缺失，请按照上方提示操作后重新运行本脚本。"
+    echo "❌ 存在尚未就绪的核心环境依赖，请根据上方指引配置后再运行制作。"
     exit 1
 else
     echo "✅ 恭喜！核心环境与 opencli 自动化工具已 100% 准备就绪！"
     echo "   您可以直接下达一条指令，开启极简快讯视频的端到端制作！"
-    exit 0
 fi
