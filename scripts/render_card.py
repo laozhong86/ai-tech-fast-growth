@@ -159,8 +159,22 @@ def render_overlay(article: dict, out_path: str):
     if comment_hook:
         badge_box = (82, 1495, 998, 1565)
         d.rounded_rectangle(badge_box, radius=12, fill=(20, 22, 28, 180), outline=(255, 196, 77, 80), width=1)
+        hook_text = comment_hook.strip()
+        has_bubble = False
+        if hook_text.startswith("💬"):
+            has_bubble = True
+            hook_text = hook_text[1:].strip()
+
         hook_fnt = get_font(30, False)
-        d.text((W / 2, 1530), comment_hook, font=hook_fnt, fill=(230, 226, 220), anchor="mm")
+        text_len = d.textlength(hook_text, font=hook_fnt)
+        if has_bubble:
+            emo_fnt_sm = get_emoji_font(32)
+            total_w = 38 + text_len
+            start_x = (W - total_w) / 2
+            d.text((start_x, 1530), "💬", font=emo_fnt_sm, embedded_color=True, anchor="lm")
+            d.text((start_x + 40, 1530), hook_text, font=hook_fnt, fill=(230, 226, 220), anchor="lm")
+        else:
+            d.text((W / 2, 1530), hook_text, font=hook_fnt, fill=(230, 226, 220), anchor="mm")
 
     overlay.save(out_path, "PNG")
     print(f"✅ 专业视觉排版卡已生成: {out_path}")
