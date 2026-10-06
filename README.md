@@ -47,7 +47,7 @@ npx skills add alchaincyf/ai-tech-fast-growth
 
 | 案例 1 · 创作者全景榜单复盘 | 案例 2 · 插件生态开发实战 | 案例 3 · 机器人灵巧手动态演示 |
 | :---: | :---: | :---: |
-| <video src="assets/demos/01-x-creators-list.mp4" poster="assets/demos/01-x-creators-list.png" controls width="280"></video> | <video src="assets/demos/02-claude-code-mods.mp4" poster="assets/demos/02-claude-code-mods.png" controls width="280"></video> | <video src="assets/demos/03-atlas-robot-hands.mp4" poster="assets/demos/03-atlas-robot-hands.png" controls width="280"></video> |
+| <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/01-x-creators-list.mp4" poster="assets/demos/01-x-creators-list.png" controls width="280"></video> | <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/02-claude-code-mods.mp4" poster="assets/demos/02-claude-code-mods.png" controls width="280"></video> | <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/03-atlas-robot-hands.mp4" poster="assets/demos/03-atlas-robot-hands.png" controls width="280"></video> |
 | **X 科技创作者全景榜单** | **Claude Code 插件生态** | **波士顿动力 Atlas 灵巧手** |
 | 榜单全景长图平滑扫视 · 社交转发池 | 双行大字刺穿痛点 · 高饱和暖金内联 | 硬件高能操作实录 · 视觉冲击力拉满 |
 
@@ -57,7 +57,7 @@ npx skills add alchaincyf/ai-tech-fast-growth
 
 | 案例 4 · Karpathy 趋势深度预测 | 案例 5 · 自动化快讯生产流水线 | 案例 6 · 技能扩展实战接入指南 |
 | :---: | :---: | :---: |
-| <video src="assets/demos/04-karpathy-ai-outputs.mp4" poster="assets/demos/04-karpathy-ai-outputs.png" controls width="280"></video> | <video src="assets/demos/05-codex-fast-news.mp4" poster="assets/demos/05-codex-fast-news.png" controls width="280"></video> | <video src="assets/demos/06-claude-skill-guide.mp4" poster="assets/demos/06-claude-skill-guide.png" controls width="280"></video> |
+| <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/04-karpathy-ai-outputs.mp4" poster="assets/demos/04-karpathy-ai-outputs.png" controls width="280"></video> | <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/05-codex-fast-news.mp4" poster="assets/demos/05-codex-fast-news.png" controls width="280"></video> | <video src="https://github.com/laozhong86/ai-tech-fast-growth/releases/download/demo-videos/06-claude-skill-guide.mp4" poster="assets/demos/06-claude-skill-guide.png" controls width="280"></video> |
 | **Karpathy 论 AI 未来输出** | **Codex 自动化快讯流水线** | **Claude 技能扩展实战指南** |
 | 行业领袖公信力 · 深度认知启发 | 一键端到端生成成片 · 工业级质感 | 原生 Emoji 列表 · 12秒极速完播闭环 |
 
