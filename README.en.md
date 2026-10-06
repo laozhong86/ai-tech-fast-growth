@@ -26,7 +26,7 @@ No generic, low-effort AI slop — crafted with premium dark-industrial aestheti
 Break free from expensive paywalled scrapers and camera fatigue. Leverage 5–13s ultra-high completion rate to tap into social recommendation algorithms.
 
 ```bash
-npx skills add alchaincyf/ai-tech-fast-growth
+npx skills add laozhong86/ai-tech-fast-growth
 ```
 
 Universal across coding agents & copilots — Claude Code, Cursor, Codex, OpenClaw, DSH.
@@ -82,7 +82,7 @@ Universal across coding agents & copilots — Claude Code, Cursor, Codex, OpenCl
 ### 1. Install Skill
 Run in any agent-supported terminal:
 ```bash
-npx skills add alchaincyf/ai-tech-fast-growth
+npx skills add laozhong86/ai-tech-fast-growth
 ```
 
 > 💡 **Self-Healing Doctor**: If full-page capture tooling is missing, the built-in diagnostic cures it automatically:

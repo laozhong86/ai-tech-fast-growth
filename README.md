@@ -26,7 +26,7 @@
 彻底摆脱高门槛会员限制与真人出镜负担，依靠 5~13 秒超高完播率撬动公域社交推荐池。
 
 ```bash
-npx skills add alchaincyf/ai-tech-fast-growth
+npx skills add laozhong86/ai-tech-fast-growth
 ```
 
 跨智能助手通用 —— Claude Code、Cursor、Codex、DSH 等主流工具均可直接接入。
@@ -82,7 +82,7 @@ npx skills add alchaincyf/ai-tech-fast-growth
 ### 1. 安装技能
 在支持扩展技能的终端中执行单行命令：
 ```bash
-npx skills add alchaincyf/ai-tech-fast-growth
+npx skills add laozhong86/ai-tech-fast-growth
 ```
 
 > 💡 **开箱自愈保障**：若本地缺少全幅截长图工具，运行内置体检脚本将自动为您静默安装：
